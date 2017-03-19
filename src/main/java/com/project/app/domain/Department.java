@@ -6,8 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -22,12 +20,7 @@ public class Department {
 	@Column(name = "DEPARTMENT_NAME")
 	private String departmentName;
 
-	@ManyToMany(mappedBy = "departments")
-	@JoinTable(
-			name="STUDENTS_IN_DEPARTMENTS",
-			joinColumns = {@JoinColumn(name="STUDENT_ID")},
-			inverseJoinColumns = {@JoinColumn(name="DEPARTMENT_ID")})
-	@Column(name = "STUDENT")
+	@ManyToMany(mappedBy="departments")	
 	private List<Student> students;
 
 	public Department() {

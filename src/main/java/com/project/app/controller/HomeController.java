@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
+		
 	private static final Logger logger = Logger.getLogger(HomeController.class);
 	
 	/**
@@ -30,7 +30,7 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime", formattedDate );	
 		
 		return "home";
 	}
