@@ -23,30 +23,36 @@ public class Student {
 
 	@Embedded
 	private PersonalData personalData;
-
-	@Embedded
-	private DomicileLocality domicileLocality;
-
 	@Embedded
 	private HomeLocality homeLocality;
 
 	@Embedded
-	private ContactDeails contactDetails;
+	private ContactDetails contactDetails;
 
-	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinTable(
-			name="STUDENTS_IN_DEPARTMENTS",
-			joinColumns = {@JoinColumn(name="STUDENT_ID")},
-			inverseJoinColumns = {@JoinColumn(name="DEPARTMENT_ID")})
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "STUDENTS_IN_DEPARTMENTS",
+	joinColumns = 	{
+		@JoinColumn(name = "STUDENT_ID") 
+	}, 
+	inverseJoinColumns = { 
+			@JoinColumn(name = "DEPARTMENT_ID") 
+	})
 	private List<Department> departments;
 
 	public Student() {
 	}
 
-	public Student(PersonalData personalData, DomicileLocality domicileLocality, HomeLocality homeLocality,
-			ContactDeails contactDetails, List<Department> departments) {
+	public Student(Student student) {
+		this.id = student.getId();
+		this.personalData = student.getPersonalData();
+		this.homeLocality = student.getHomeLocality();
+		this.contactDetails = student.getContactDetails();
+		this.departments = student.getDepartments();
+	}
+
+	public Student(PersonalData personalData, HomeLocality homeLocality, ContactDetails contactDetails,
+			List<Department> departments) {
 		this.personalData = personalData;
-		this.domicileLocality = domicileLocality;
 		this.homeLocality = homeLocality;
 		this.contactDetails = contactDetails;
 		this.departments = departments;
@@ -68,14 +74,6 @@ public class Student {
 		this.personalData = personalData;
 	}
 
-	public DomicileLocality getDomicileLocality() {
-		return domicileLocality;
-	}
-
-	public void setDomicileLocality(DomicileLocality domicileLocality) {
-		this.domicileLocality = domicileLocality;
-	}
-
 	public HomeLocality getHomeLocality() {
 		return homeLocality;
 	}
@@ -84,11 +82,11 @@ public class Student {
 		this.homeLocality = homeLocality;
 	}
 
-	public ContactDeails getContactDetails() {
+	public ContactDetails getContactDetails() {
 		return contactDetails;
 	}
 
-	public void setContactDetails(ContactDeails contactDetails) {
+	public void setContactDetails(ContactDetails contactDetails) {
 		this.contactDetails = contactDetails;
 	}
 
@@ -102,8 +100,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", personalData=" + personalData + ", domicileLocality=" + domicileLocality
-				+ ", homeLocality=" + homeLocality + ", contactDetails=" + contactDetails + ", departments="
-				+ departments + "]";
+		return "Student [id=" + id + ", personalData=" + personalData + ", homeLocality=" + homeLocality
+				+ ", contactDetails=" + contactDetails + ", departments=" + departments + "]";
 	}
 }

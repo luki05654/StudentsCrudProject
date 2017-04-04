@@ -17,9 +17,9 @@ public interface IStudentRepository {
 
 	List<Student> getStudents(int elementsInPage, int pageNumber, String order);
 
-	List<Student> getStudentsByFirstName(String firstName, int elementsInPage, int pageNumber, String order);
+	List<Student> getStudentsByFirstName(String firstName, int elementsInPage, int startPosition, String order);
 
-	List<Student> getStudentsByLastName(String lasttName, int elementsInPage, int pageNumber, String order);
+	List<Student> getStudentsByLastName(String lastName, int elementsInPage, int startPosition, String order);
 
-	List<Student> getStudentsByDepartment(String departmentName, int elementsInPage, int pageNumber, String order);
+	List<Student> getStudentsByDepartment(String departmentName, int elementsInPage, int startPosition, String order);
 }

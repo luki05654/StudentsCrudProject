@@ -20,7 +20,7 @@ public class Department {
 	@Column(name = "DEPARTMENT_NAME")
 	private String departmentName;
 
-	@ManyToMany(mappedBy="departments")	
+	@ManyToMany(mappedBy = "departments")
 	private List<Student> students;
 
 	public Department() {
@@ -55,8 +55,8 @@ public class Department {
 		this.students = students;
 	}
 
-	@Override
+	/*@Override
 	public String toString() {
 		return "Department [id=" + id + ", departmentName=" + departmentName + ", students=" + students + "]";
-	}
+	}*/
 }

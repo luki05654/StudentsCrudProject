@@ -4,17 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ContactDeails {
+public class ContactDetails {
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
 
 	@Column(name = "EMAIL_ADDRESS")
 	private String emailAddress;
 
-	public ContactDeails() {
+	public ContactDetails() {
 	}
 
-	public ContactDeails(String phoneNumber, String emailAddress) {
+	public ContactDetails(String phoneNumber, String emailAddress) {
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
 	}

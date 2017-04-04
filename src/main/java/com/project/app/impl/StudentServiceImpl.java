@@ -40,23 +40,23 @@ public class StudentServiceImpl implements IStudentService {
 	}
 
 	@Override
-	public List<Student> getStudents(int elementsInPage, int pageNumber, String order) {
-		return studentRepository.getStudents(elementsInPage, pageNumber, order);
+	public List<Student> getStudents(int elementsInPage, int startPosition, String order) {
+		return studentRepository.getStudents(elementsInPage, startPosition, order);
 	}
 
 	@Override
-	public List<Student> getStudentsByFirstName(String firstName, int elementsInPage, int pageNumber, String order) {
-		return studentRepository.getStudentsByFirstName(firstName, elementsInPage, pageNumber, order);
+	public List<Student> getStudentsByFirstName(String firstName, int elementsInPage, int startPosition, String order) {
+		return studentRepository.getStudentsByFirstName(firstName, elementsInPage, startPosition, order);
 	}
 
 	@Override
-	public List<Student> getStudentsByLastName(String lasttName, int elementsInPage, int pageNumber, String order) {
-		return studentRepository.getStudentsByLastName(lasttName, elementsInPage, pageNumber, order);
+	public List<Student> getStudentsByLastName(String lastName, int elementsInPage, int startPosition, String order) {
+		return studentRepository.getStudentsByLastName(lastName, elementsInPage, startPosition, order);
 	}
 
 	@Override
-	public List<Student> getStudentsByDepartment(String departmentName, int elementsInPage, int pageNumber,
+	public List<Student> getStudentsByDepartment(String departmentName, int elementsInPage, int startPosition,
 			String order) {
-		return studentRepository.getStudentsByDepartment(departmentName, elementsInPage, pageNumber, order);
+		return studentRepository.getStudentsByDepartment(departmentName, elementsInPage, startPosition, order);
 	}
 }

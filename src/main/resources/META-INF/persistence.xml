@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
-	
+
 	<persistence-unit name="oracleConfigurationUnit">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
@@ -12,10 +12,30 @@
 			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 			<property name="hibernate.connection.username" value="system" />
 			<property name="hibernate.connection.password" value="oracle2017" />
-			<property name="hibernate.show_sql" value="true"/>
-			<!-- <property name="hibernate.flushMode" value="FLUSH_AUTO" /> -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.enable_lazy_load_no_trans" value="true" 
+				/> -->
+			<property name="hibernate.flushMode" value="FLUSH_AUTO" />
+			<!-- <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="hurtownieDanych">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="hibernate.connection.username" value="system" />
+			<property name="hibernate.connection.password" value="oracle2017" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.enable_lazy_load_no_trans" value="true" 
+				/> -->
+			<property name="hibernate.flushMode" value="FLUSH_AUTO" />
 			<!-- <property name="hibernate.hbm2ddl.auto" value="update" /> -->
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
-</persistence-unit>
+	</persistence-unit>
 </persistence>
