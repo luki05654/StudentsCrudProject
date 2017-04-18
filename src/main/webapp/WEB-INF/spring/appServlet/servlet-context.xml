@@ -11,6 +11,9 @@
 
 	<!-- Use @Controller annotations for MVC controller definitions -->
 	<annotation-driven />
+	<interceptors>
+		<beans:bean class="com.project.app.interceptor.PerformanceInterceptor"/>
+	</interceptors>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->

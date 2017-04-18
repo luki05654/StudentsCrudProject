@@ -6,6 +6,8 @@ import com.project.app.domain.Student;
 
 public interface IStudentRepository {
 	Student addStudent(Student student);
+	
+	List<Student> addStudents(List<Student> students);
 
 	void deleteStudent(Student student);
 

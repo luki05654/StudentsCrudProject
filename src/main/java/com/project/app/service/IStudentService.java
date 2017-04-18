@@ -7,6 +7,8 @@ import com.project.app.domain.Student;
 public interface IStudentService {
 	Student addStudent(Student student);
 
+	List<Student> addStudents(List<Student> students);
+	
 	void deleteStudent(Student student);
 
 	Student getStudentById(long id);

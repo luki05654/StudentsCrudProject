@@ -20,7 +20,12 @@ public class StudentServiceImpl implements IStudentService {
 	}
 
 	@Override
-	public void deleteStudent(Student student) {
+	public List<Student> addStudents(List<Student> students) {
+		return studentRepository.addStudents(students);
+	}
+	
+	@Override
+	public void deleteStudent(Student student)   {
 		studentRepository.deleteStudent(student);
 	}
 

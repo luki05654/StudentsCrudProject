@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -62,6 +63,20 @@ public class HomeController {
 		//logger.info("Student by lastName: " + studentRepository.getStudentsByLastName("LastName2", 10, 0, Order.ASC));
 		//logger.info("Student by departmentName: " + studentRepository.getStudentsByDepartment("DepartmentName0", 10, 0, Order.ASC).toString());
 		return HomeViewName;
+	}
+	
+	@RequestMapping(value = "/{userType}", method = RequestMethod.GET)
+	public String redirectToPage(@PathVariable(value="userType") String userType) {
+		switch (userType) {
+		case "admin":
+			return "redirect:/students-admin";
+		
+		case "plainUser":
+			return "redirect:/students";
+			
+		default:
+			return "";
+		}
 	}
 	
 	private void createFakeData() {

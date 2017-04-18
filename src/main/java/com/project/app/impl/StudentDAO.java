@@ -43,6 +43,26 @@ public class StudentDAO implements IStudentRepository {
 
 		return student;
 	}
+	
+	@Override
+	public List<Student> addStudents(List<Student> students) {
+		begin();
+		try {
+			for(Student student : students) {
+				entityManager.persist(student);
+			}			
+		}
+		catch (EntityExistsException e) {
+			logger.error("Error (EntityExistsException): " + e.getMessage());
+		} 
+		catch (Exception e) {
+			logger.error("Error (Exception): " + e.getMessage());
+		} 
+		finally {
+			commit();
+		}
+		return students;
+	}
 
 	@Override
 	public void deleteStudent(Student student) {
@@ -269,5 +289,4 @@ public class StudentDAO implements IStudentRepository {
 		// entityManager.close();
 		// entityManagerFactory.close();
 	}
-
 }

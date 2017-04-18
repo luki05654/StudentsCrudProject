@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>
-			<spring:message code=""/>
+			<%-- <spring:message code=""/> --%>
 		</title>
 		<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" />">
 		<link rel="stylesheet" href="<c:url value="/resources/css/myStyles.css" />">
