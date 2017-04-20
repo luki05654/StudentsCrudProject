@@ -15,7 +15,7 @@ public class StudentController {
 	@Autowired
 	private IStudentRepository studentRepository;
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("/student/{id}")
 	public String getStudentById(Model model, @PathVariable("id") long id) {
 		model.addAttribute("student", studentRepository.getStudentById(id));
 		

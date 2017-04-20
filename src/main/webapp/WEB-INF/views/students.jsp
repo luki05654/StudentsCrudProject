@@ -11,7 +11,9 @@
 		</title>
 		<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" />">
 		<link rel="stylesheet" href="<c:url value="/resources/css/myStyles.css" />">
+		
 		<script src="<c:url value="/resources/js/jquery-3.1.1.js" />"></script>
+		<script src="<c:url value="/resources/js/ajaxPaginator.js" />"></script>		
 	</head>
 	<body>	
 		<div class="jumbotron text-center">
@@ -30,24 +32,24 @@
 					<button class="btn btn-success">Cos tam</button>
 				</div>
 				<div class="col-sm-6 text-right my-col-operations">					
-					<button class="btn btn-warning">
+					<button class="btn btn-warning btn-first-page">
 						<spring:message code="students.table.button.firstPage"/>
 					</button>
-					<button class="btn btn-primary">
+					<button class="btn btn-primary btn-previous-page">
 						<spring:message code="students.table.button.previousPage"/>
 					</button>				
 					<span id="current-page-number">${currentPageNumber}</span>
 					<span>
 						<spring:message code="students.table.label.of"/>&nbsp;${pagesCount}
 					</span>
-					<button class="btn btn-primary">
+					<button class="btn btn-primary btn-next-page">
 						<spring:message code="students.table.button.nextPage"/>
 					</button>
 				</div>
 			</div>		
 			<div class="row">
 				<div class="col-md">
-					<table class="table table-striped table-bordered">
+					<table class="table table-striped table-bordered table-content">
 						<tr>
 							<th>
 								<spring:message code="students.table.header.id"/>
@@ -87,7 +89,7 @@
 								<td>${student.homeLocality.postalCode}</td>
 								<td>${student.contactDetails.emailAddress}</td>
 								<td>
-									<a href="#">Show details</a>
+									<a href="<c:url value='/student/${student.id}' />">Show details</a>
 								</td>
 							</tr>
 						</c:forEach>
