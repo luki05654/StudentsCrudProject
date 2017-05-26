@@ -21,8 +21,6 @@ import com.project.app.domain.Sex;
 import com.project.app.domain.Student;
 import com.project.app.repository.IStudentRepository;
 
-import hurtownie.danych.DatabaseCreator;
-
 /**
  * Handles requests for the application home page.
  */
@@ -48,20 +46,8 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );	
 		
-		//new DatabaseCreator();
-		
 		//createFakeData();
 		
-		//logger.info("Student repository size: " + studentRepository.getStudentsCount());
-		//logger.info("Student by ID: " + studentRepository.getStudentById(1L));
-		//logger.info("All students: " + studentRepository.getAllStudents().toString());
-		//logger.info("Students in page: " + studentRepository.getStudents(2, 3, Order.DESC));
-		
-		//Student student =  studentRepository.getStudentById(199L);
-		//studentRepository.deleteStudent(student);
-		//logger.info("Student by firstName: " + studentRepository.getStudentsByFirstName("FirstName0", 10, 0, Order.ASC));
-		//logger.info("Student by lastName: " + studentRepository.getStudentsByLastName("LastName2", 10, 0, Order.ASC));
-		//logger.info("Student by departmentName: " + studentRepository.getStudentsByDepartment("DepartmentName0", 10, 0, Order.ASC).toString());
 		return HomeViewName;
 	}
 	

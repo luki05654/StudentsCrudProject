@@ -11,15 +11,21 @@
 		<script src="<c:url value="/resources/js/jquery-3.1.1.js" />"></script>
     	<script src="<c:url value="/resources/js/test.js" />"></script>
 
-		<title>Logowanie</title>
+		<title>
+			<spring:message code="login.page.title"/>
+		</title>
 	</head>
 
 	<body>
 		<section>
-			<div class="jumbotron">
+			<div class="jumbotron text-center">
 				<div class="container">
-					<h1>Produkty</h1>
-					<p>Dodaj produkty</p>
+					<h1>
+						<spring:message code="login.page.page.header"/>
+					</h1>
+					<p>
+						<spring:message code="login.page.page.paragraph"/>
+					</p>
 				</div>
 			</div>
 		</section>
@@ -34,7 +40,7 @@
 						<div class="panel-body">
 							<c:if test="${not empty error}">
 								<div class="alert alert-danger">
-									<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials"/><br />
+									<spring:message code="abstractUserDetailsAuthenticationProvider.badCredentials"/><br />
 								</div>
 							</c:if>
 							

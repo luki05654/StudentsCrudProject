@@ -2,6 +2,12 @@
 	margin-bottom: 10px;
 }
 
+#add-student-operation {
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-bottom: -15px;
+}
+
 #current-page-number {
 	font-weight: bold;
 }

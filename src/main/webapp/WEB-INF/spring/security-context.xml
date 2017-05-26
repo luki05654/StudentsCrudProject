@@ -4,7 +4,7 @@
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true">
-		<intercept-url pattern="/students-admin" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/students-admin**" access="hasRole('ROLE_ADMIN')" />
 		<!-- <form-login login-page="/login" default-target-url="/products/add" 
 			authentication-failure-url="/loginfailed" /> -->
 		<form-login login-processing-url="/j_spring_security_check"

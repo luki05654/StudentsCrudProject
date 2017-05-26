@@ -14,6 +14,7 @@
 		
 		<script src="<c:url value="/resources/js/jquery-3.1.1.js" />"></script>
 		<script src="<c:url value="/resources/js/ajaxPaginator.js" />"></script>		
+		<script src="<c:url value="/resources/js/ajaxSearch.js" />"></script>		
 	</head>
 	<body>	
 		<div class="jumbotron text-center">
@@ -29,7 +30,10 @@
 		<div class="container">			
 			<div id="table-operations" class="row">
 				<div class="col-sm-6 text-left my-col-operations">
-					<button class="btn btn-success">Cos tam</button>
+					<input type="text" id="input-search">
+					<a class="btn btn-success" id="link-search">
+						<spring:message code="students.table.search"/>
+					</a>
 				</div>
 				<div class="col-sm-6 text-right my-col-operations">					
 					<button class="btn btn-warning btn-first-page">
